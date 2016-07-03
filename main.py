@@ -1,5 +1,6 @@
 from battle_field import Battlefield
 
-b = Battlefield(3)
+if __name__ == '__main__':
+    b = Battlefield(3)
 
-b.start()
+    b.start()
