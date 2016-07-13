@@ -21,9 +21,15 @@ class Vehicle(Unit):
         random_operator_dmg = dmg * 0.2
         random_operator = random.choice(self._operators)
         random_operator.take_damage(random_operator_dmg)
+        died = True
         for operator in self._operators:
             if operator != random_operator:
                 operator.take_damage(dmg * 0.1)
+            if operator.is_alive():
+                died = False
+        if died:
+            self._health = 0
+
 
     def calc_armor(self):
         operators_sum_exp = 0

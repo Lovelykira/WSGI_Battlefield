@@ -4,7 +4,7 @@ from abstract_strategy import AbstractStrategy
 class WeakestStrategy(AbstractStrategy):
     @classmethod
     def chose_squad(cls, enemy_army):
-        weakest_hp = 10000000000000
+        weakest_hp = float('inf')
         squad_hp = 0
         weakest_squad = 0
         for squad in enemy_army.get_alive_squads():
